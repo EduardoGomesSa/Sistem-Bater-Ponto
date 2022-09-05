@@ -88,6 +88,29 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "BaterPonto.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BaterPonto.Infra": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BaterPonto.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaterPonto.Application.dll": {}
+        }
+      },
+      "BaterPonto.Infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/BaterPonto.Infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaterPonto.Infra.dll": {}
+        }
       }
     }
   },
@@ -216,10 +239,21 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "BaterPonto.Application/1.0.0": {
+      "type": "project",
+      "path": "../BaterPonto.Application/BaterPonto.Application.csproj",
+      "msbuildProject": "../BaterPonto.Application/BaterPonto.Application.csproj"
+    },
+    "BaterPonto.Infra/1.0.0": {
+      "type": "project",
+      "path": "../BaterPonto.Infra/BaterPonto.Infra.csproj",
+      "msbuildProject": "../BaterPonto.Infra/BaterPonto.Infra.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BaterPonto.Application >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -249,7 +283,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Application\\BaterPonto.Application.csproj": {
+              "projectPath": "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Application\\BaterPonto.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

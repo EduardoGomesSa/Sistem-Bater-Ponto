@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BaterPonto.Infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/BaterPonto.Infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaterPonto.Infra.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BaterPonto.Infra/1.0.0": {
+      "type": "project",
+      "path": "../BaterPonto.Infra/BaterPonto.Infra.csproj",
+      "msbuildProject": "../BaterPonto.Infra/BaterPonto.Infra.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BaterPonto.Infra >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\eduar\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Infra\\BaterPonto.Infra.csproj": {
+              "projectPath": "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Infra\\BaterPonto.Infra.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
