@@ -1,0 +1,15 @@
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\bin\Debug\net6.0\BaterPonto.Application.deps.json
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\bin\Debug\net6.0\BaterPonto.Application.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\bin\Debug\net6.0\BaterPonto.Application.pdb
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.csproj.AssemblyReference.cache
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.AssemblyInfoInputs.cache
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.AssemblyInfo.cs
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.csproj.CoreCompileInputs.cache
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.csproj.CopyComplete
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\refint\BaterPonto.Application.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\BaterPonto.Application.pdb
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\obj\Debug\net6.0\ref\BaterPonto.Application.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\bin\Debug\net6.0\BaterPonto.Domain.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Application\bin\Debug\net6.0\BaterPonto.Domain.pdb

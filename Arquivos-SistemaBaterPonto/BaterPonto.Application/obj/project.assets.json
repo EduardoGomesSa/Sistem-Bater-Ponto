@@ -2,28 +2,88 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "BaterPonto.Infra/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+      "MediatR/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MediatR.Contracts": "1.0.1"
+        },
         "compile": {
-          "bin/placeholder/BaterPonto.Infra.dll": {}
+          "lib/netstandard2.1/MediatR.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "bin/placeholder/BaterPonto.Infra.dll": {}
+          "lib/netstandard2.1/MediatR.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MediatR.Contracts/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "BaterPonto.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BaterPonto.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaterPonto.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "BaterPonto.Infra/1.0.0": {
+    "MediatR/10.0.1": {
+      "sha512": "vnjbk4giDJzJelh34Ygt0eorApCKrRFB7j0pauFPY1oxfO3cEZ7FugBrIOjCM76SDGTOmPFfbfmVnz1t3iFrGA==",
+      "type": "package",
+      "path": "mediatr/10.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.10.0.1.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "MediatR.Contracts/1.0.1": {
+      "sha512": "NsRvOxthhkYml4DcBMyJsmym8C4MchioH7wxKVPEg7plFj9Euh/i4IcmZ3Gvgx6+K8obeuhPeJdoBl56wnuo3A==",
+      "type": "package",
+      "path": "mediatr.contracts/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.Contracts.dll",
+        "lib/net461/MediatR.Contracts.xml",
+        "lib/netstandard2.0/MediatR.Contracts.dll",
+        "lib/netstandard2.0/MediatR.Contracts.xml",
+        "mediatr.contracts.1.0.1.nupkg.sha512",
+        "mediatr.contracts.nuspec"
+      ]
+    },
+    "BaterPonto.Domain/1.0.0": {
       "type": "project",
-      "path": "../BaterPonto.Infra/BaterPonto.Infra.csproj",
-      "msbuildProject": "../BaterPonto.Infra/BaterPonto.Infra.csproj"
+      "path": "../BaterPonto.Domain/BaterPonto.Domain.csproj",
+      "msbuildProject": "../BaterPonto.Domain/BaterPonto.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BaterPonto.Infra >= 1.0.0"
+      "BaterPonto.Domain >= 1.0.0",
+      "MediatR >= 10.0.1"
     ]
   },
   "packageFolders": {
@@ -53,8 +113,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Infra\\BaterPonto.Infra.csproj": {
-              "projectPath": "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Infra\\BaterPonto.Infra.csproj"
+            "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Domain\\BaterPonto.Domain.csproj": {
+              "projectPath": "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Domain\\BaterPonto.Domain.csproj"
             }
           }
         }
@@ -68,6 +128,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[10.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
