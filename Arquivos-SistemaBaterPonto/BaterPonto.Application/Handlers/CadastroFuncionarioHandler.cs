@@ -37,6 +37,7 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
                 cpf: adicionarFuncionario.Cpf,
                 dataInicioContratacao: adicionarFuncionario.DataInicioContratacao,
                 dataFimContratacao: null,
+                idCargo: 0,
                 cargo: cargoFuncionario
                 );
         }

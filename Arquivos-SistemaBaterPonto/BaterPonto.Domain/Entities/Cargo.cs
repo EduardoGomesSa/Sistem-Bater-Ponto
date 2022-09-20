@@ -6,6 +6,11 @@ namespace BaterPonto.Domain.Entities
 {
     public class Cargo
     {
+        public Cargo()
+        {
+
+        }
+
         public Cargo(int id, string? nome, decimal valorHora, int cargaHoraria)
         {
             Id = id;

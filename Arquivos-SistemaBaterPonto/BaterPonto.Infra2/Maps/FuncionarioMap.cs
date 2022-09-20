@@ -29,6 +29,9 @@ namespace BaterPonto.Infra.Maps
             Map(f => f.DataFimContratacao)
                 .Column("data_fim_contratacao");
 
+            Map(f => f.IdCargo)
+                .Column("id_cargo");
+
             Map(f => f.Cargo)
                 .Ignore();
 

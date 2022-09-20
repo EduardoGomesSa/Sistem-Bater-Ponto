@@ -15,6 +15,8 @@ namespace BaterPonto.Infra.Services
 
         public bool Adicionar(Funcionario funcionario)
         {
+            funcionario.SetIdCargo();
+
             return _funcionarioRepository.Inserir(funcionario) > 0;
         }
     }
