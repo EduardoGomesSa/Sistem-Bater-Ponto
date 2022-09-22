@@ -11,7 +11,7 @@ namespace BaterPonto.Domain.Entities
 
         }
 
-        public Cargo(int id, string? nome, decimal valorHora, int cargaHoraria)
+        public Cargo(Int64 id, string? nome, decimal valorHora, int cargaHoraria)
         {
             Id = id;
             Nome = nome;
@@ -19,7 +19,7 @@ namespace BaterPonto.Domain.Entities
             CargaHoraria = cargaHoraria;
         }
 
-        public int Id { get; private set; }
+        public Int64 Id { get; private set; }
         public string? Nome { get; private set; }
         public decimal ValorHora { get; private set; }
         public int CargaHoraria { get; private set; }

@@ -25,11 +25,12 @@ namespace BaterPonto.Domain.Entities
         public string? Cpf { get; private set; }
         public DateTime DataInicioContratacao { get; private set; }
         public DateTime? DataFimContratacao { get; private set; }
-        public int IdCargo { get; private set; }
+        public Int64 IdCargo { get; private set; }
         public Cargo Cargo { get; private set; }
 
-        public void SetIdCargo()
+        public void SetIdCargo(Int64 id)
         {
+            this.IdCargo = id;
             this.Cargo = null;
         }
     }

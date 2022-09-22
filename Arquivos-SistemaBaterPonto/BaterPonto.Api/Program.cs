@@ -23,6 +23,7 @@ builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<IRequestHandler<AdicionarFuncionario, bool>, CadastroFuncionarioHandler>();
 builder.Services.AddScoped<ICadastroFuncionarioService, CadastroFuncionarioService>();
 builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+builder.Services.AddScoped<ICargoRepository, CargoRepository>();
 builder.Services.AddScoped<IBaseRepository<Funcionario>, BaseRepository<Funcionario, FuncionarioMap>>();
 
 
