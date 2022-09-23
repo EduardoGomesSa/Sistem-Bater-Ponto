@@ -32,5 +32,15 @@ namespace BaterPonto.Infra.Services
 
             return _funcionarioRepository.Inserir(funcionario) > 0;
         }
+
+        public bool AtualizarDataFimContratacao(long id, DateTime dataFim)
+        {
+            return _funcionarioRepository.AtualizarDataFimContratacao(id, dataFim);
+        }
+
+        public bool AtualizarNome(long id, string nome)
+        {
+            return _funcionarioRepository.AtualizarNome(id, nome);
+        }
     }
 }

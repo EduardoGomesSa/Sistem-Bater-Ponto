@@ -5,7 +5,9 @@ using MediatR;
 
 namespace BaterPonto.Application.CadastroFuncionarioHandler
 {
-    public class CadastroFuncionarioHandler : IRequestHandler<AdicionarFuncionario, bool>
+    public class CadastroFuncionarioHandler : IRequestHandler<AdicionarFuncionario, bool>,
+                                              IRequestHandler<AtualizarNomeFuncionario, bool>,
+                                              IRequestHandler<AtualizarDataFimContratacaoFuncionario, bool>
     {
         readonly private ICadastroFuncionarioService _cadastroFuncionarioService;
         public CadastroFuncionarioHandler(ICadastroFuncionarioService cadastroFuncionarioService)
@@ -20,6 +22,20 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
             var funcionarioAdicionado = _cadastroFuncionarioService.Adicionar(funcionario);
 
             return Task.FromResult(funcionarioAdicionado);
+        }
+
+        public Task<bool> Handle(AtualizarNomeFuncionario request, CancellationToken cancellationToken)
+        {
+            var nomeAtualizado = _cadastroFuncionarioService.AtualizarNome(request.Id, request.Nome);
+
+            return Task.FromResult(nomeAtualizado);
+        }
+
+        public Task<bool> Handle(AtualizarDataFimContratacaoFuncionario request, CancellationToken cancellationToken)
+        {
+            var dataFimAtualizada = _cadastroFuncionarioService.AtualizarDataFimContratacao(request.Id, request.DataFimContratacao);
+
+            return Task.FromResult(dataFimAtualizada);
         }
 
         private Funcionario ConverterParaFuncionario(AdicionarFuncionario adicionarFuncionario)

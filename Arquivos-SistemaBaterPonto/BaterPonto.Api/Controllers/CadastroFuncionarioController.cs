@@ -23,5 +23,21 @@ namespace BaterPonto.Api.Controllers
 
             return Ok();
         }
+
+        [HttpPatch("AtualizarNome")]
+        public IActionResult AtualizarNome([FromQuery]AtualizarNomeFuncionario atualizarNomeFuncionario)
+        {
+            var nomeAtualizado = _mediator.Send(atualizarNomeFuncionario);
+
+            return Ok();
+        }
+
+        [HttpPatch("AtualizarDataFimContratacao")]
+        public IActionResult AtualizarDataFimContratacao([FromQuery]AtualizarDataFimContratacaoFuncionario atualizarDataFimContratacaoFuncionario)
+        {
+            var dataFimContratacaoAtualizada = _mediator.Send(atualizarDataFimContratacaoFuncionario);
+
+            return Ok();
+        }
     }
 }
