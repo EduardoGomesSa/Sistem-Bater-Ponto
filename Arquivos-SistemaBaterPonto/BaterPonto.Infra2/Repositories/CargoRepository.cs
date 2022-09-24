@@ -13,5 +13,12 @@ namespace BaterPonto.Infra.Repositories
 
             return DBHelper<Cargo>.InstanciaNpgsql.GetQuery(sql).FirstOrDefault();
         }
+
+        public bool AtualizarNome(long id, string nome)
+        {
+            var sql = $"update cadastro.cargo set nome = '{nome}' where id = {id};";
+
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) > 0;
+        }
     }
 }

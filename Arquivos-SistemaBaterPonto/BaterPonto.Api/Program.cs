@@ -1,5 +1,6 @@
 using BaterPonto.Application.CadastroFuncionarioHandler;
 using BaterPonto.Application.Commands;
+using BaterPonto.Application.Handlers;
 using BaterPonto.Application.Interfaces;
 using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
@@ -23,7 +24,9 @@ builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<IRequestHandler<AdicionarFuncionario, bool>, CadastroFuncionarioHandler>();
 builder.Services.AddScoped<IRequestHandler<AtualizarNomeFuncionario, bool>, CadastroFuncionarioHandler>();
 builder.Services.AddScoped<IRequestHandler<AtualizarDataFimContratacaoFuncionario, bool>, CadastroFuncionarioHandler>();
+builder.Services.AddScoped<IRequestHandler<AtualizarNomeCargo, bool>, CadastroCargoHandler>();
 builder.Services.AddScoped<ICadastroFuncionarioService, CadastroFuncionarioService>();
+builder.Services.AddScoped<ICadastroCargoService, CadastroCargoService>();
 builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddScoped<ICargoRepository, CargoRepository>();
 builder.Services.AddScoped<IBaseRepository<Funcionario>, BaseRepository<Funcionario, FuncionarioMap>>();

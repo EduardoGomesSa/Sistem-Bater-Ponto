@@ -35,6 +35,10 @@ namespace BaterPonto.Infra.Services
 
         public bool AtualizarDataFimContratacao(long id, DateTime dataFim)
         {
+            var funcionario = _funcionarioRepository.BuscarPorId(id);
+
+            if (funcionario.DataInicioContratacao > dataFim) return false;
+
             return _funcionarioRepository.AtualizarDataFimContratacao(id, dataFim);
         }
 
