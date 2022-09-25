@@ -30,6 +30,8 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
 
         public Task<bool> Handle(AtualizarNomeFuncionario request, CancellationToken cancellationToken)
         {
+            if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
+
             var nomeAtualizado = _cadastroFuncionarioService.AtualizarNome(request.Id, request.Nome);
 
             return Task.FromResult(nomeAtualizado);
@@ -73,6 +75,11 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         public ValidationResult ObterResultadoValidacao(AtualizarDataFimContratacaoFuncionario atualizarDataFimContratacaoFuncionario)
         {
             return new AtualizarDataFimContratacaoFuncionarioValidation(_cadastroFuncionarioService).Validate(atualizarDataFimContratacaoFuncionario);
+        }
+
+        public ValidationResult ObterResultadoValidacao(AtualizarNomeFuncionario atualizarNomeFuncionario)
+        {
+            return new AtualizarNomeFuncionarioValidation(_cadastroFuncionarioService).Validate(atualizarNomeFuncionario);
         }
     }
 }

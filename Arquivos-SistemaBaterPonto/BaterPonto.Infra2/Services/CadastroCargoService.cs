@@ -21,5 +21,14 @@ namespace BaterPonto.Infra.Services
         {
             return _cargoRepository.AtualizarNome(id, nome);
         }
+
+        public bool CargoExiste(long id)
+        {
+            var cargo = _cargoRepository.BuscarPorId(id);
+
+            if (cargo == null) return false;
+
+            return cargo.Id > 0;
+        }
     }
 }
