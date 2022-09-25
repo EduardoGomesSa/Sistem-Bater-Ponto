@@ -37,6 +37,8 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
 
         public Task<bool> Handle(AtualizarDataFimContratacaoFuncionario request, CancellationToken cancellationToken)
         {
+            if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
+
             var dataFimAtualizada = _cadastroFuncionarioService.AtualizarDataFimContratacao(request.Id, request.DataFimContratacao);
 
             return Task.FromResult(dataFimAtualizada);
@@ -66,6 +68,11 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         public ValidationResult ObterResultadoValidacao(AdicionarFuncionario adicionarFuncionario)
         {
             return new AdicionarFuncionarioValidation(_cadastroFuncionarioService).Validate(adicionarFuncionario);
+        }
+
+        public ValidationResult ObterResultadoValidacao(AtualizarDataFimContratacaoFuncionario atualizarDataFimContratacaoFuncionario)
+        {
+            return new AtualizarDataFimContratacaoFuncionarioValidation(_cadastroFuncionarioService).Validate(atualizarDataFimContratacaoFuncionario);
         }
     }
 }

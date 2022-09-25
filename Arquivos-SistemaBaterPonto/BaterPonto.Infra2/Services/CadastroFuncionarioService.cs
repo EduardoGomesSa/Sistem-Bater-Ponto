@@ -37,6 +37,8 @@ namespace BaterPonto.Infra.Services
         {
             var funcionario = _funcionarioRepository.BuscarPorId(id);
 
+            if(funcionario == null) return false;
+
             if (funcionario.DataInicioContratacao > dataFim) return false;
 
             return _funcionarioRepository.AtualizarDataFimContratacao(id, dataFim);
@@ -45,6 +47,16 @@ namespace BaterPonto.Infra.Services
         public bool AtualizarNome(long id, string nome)
         {
             return _funcionarioRepository.AtualizarNome(id, nome);
+        }
+
+        //Validações
+        public bool FuncionarioExiste(Int64 id)
+        {
+            var funcionario = _funcionarioRepository.BuscarPorId(id);
+
+            if (funcionario == null) return false;
+
+            return funcionario.Id > 0;
         }
 
         public bool FuncionarioExiste(string cpf)
