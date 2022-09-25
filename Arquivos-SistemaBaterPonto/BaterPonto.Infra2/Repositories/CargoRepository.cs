@@ -11,14 +11,25 @@ namespace BaterPonto.Infra.Repositories
         {
             var sql = $"select * from cadastro.cargo where nome = '{nome}';";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.GetQuery(sql).FirstOrDefault();
+            var cargo = DBHelper<Cargo>.InstanciaNpgsql.GetQuery(sql).FirstOrDefault();
+
+            if (cargo != null) return cargo;
+
+            return null;
         }
 
         public bool AtualizarNome(long id, string nome)
         {
             var sql = $"update cadastro.cargo set nome = '{nome}' where id = {id};";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) > 0;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+        }
+
+        public bool AtualizarCargaHoraria(long id, int cargaHoraria)
+        {
+            var sql = $"update cadastro.cargo set carga_horaria = {cargaHoraria} where id = {id};";
+
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
         }
     }
 }

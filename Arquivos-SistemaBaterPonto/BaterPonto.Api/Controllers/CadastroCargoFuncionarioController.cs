@@ -16,7 +16,7 @@ namespace BaterPonto.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPatch]
+        [HttpPatch("AtualizarNomeCargo")]
         public async Task<IActionResult> AtualizarNomeCargo([FromQuery] AtualizarNomeCargo atualizarNomeCargo)
         {
             var nomeAtualizado = await _mediator.Send(atualizarNomeCargo);
@@ -24,6 +24,16 @@ namespace BaterPonto.Api.Controllers
             if(nomeAtualizado) return Ok();
 
             return BadRequest(nomeAtualizado);
+        }
+
+        [HttpPatch("AtualizarCargaHoraria")]
+        public async Task<IActionResult> AtualizarCargaHoraria([FromQuery] AtualizarCargaHorariaCargo atualizarCargaHorariaCargo)
+        {
+            var cargaHorariaAtualizada = await _mediator.Send(atualizarCargaHorariaCargo);
+
+            if(cargaHorariaAtualizada) return Ok();
+
+            return BadRequest(cargaHorariaAtualizada);
         }
     }
 }

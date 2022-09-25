@@ -12,6 +12,11 @@ namespace BaterPonto.Infra.Services
             _cargoRepository = cargoRepository;
         }
 
+        public bool AtualizarCargaHoraria(long id, int cargaHoraria)
+        {
+            return _cargoRepository.AtualizarCargaHoraria(id, cargaHoraria);
+        }
+
         public bool AtualizarNome(long id, string nome)
         {
             return _cargoRepository.AtualizarNome(id, nome);

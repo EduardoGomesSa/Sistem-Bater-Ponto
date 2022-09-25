@@ -3,6 +3,7 @@ using BaterPonto.Infra.Interfaces;
 using BaterPonto.Infra.Maps;
 using BaterPonto.Infra.Repositories.Data;
 using Microsoft.VisualBasic;
+using static Slapper.AutoMapper;
 
 namespace BaterPonto.Infra.Repositories
 {
@@ -20,6 +21,13 @@ namespace BaterPonto.Infra.Repositories
             var query = $"update cadastro.funcionario set nome = '{nome}' where id = {id};";
 
             return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) != null;
+        }
+
+        public bool FuncionarioExiste(string cpf)
+        {
+            var query = $"select * from cadastro.funcionario where cpf = '{cpf}';";
+
+            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) == null;
         }
     }
 }

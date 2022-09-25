@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "N16KhOokuyjFxSGNrHWVRTjNSktiFCNwqeEy2tACaJEYsHXE2d41Qwy7HGZbzFa/NeV384B3VNf8rXkQFPSTUg==",
+  "dgSpecHash": "MUTUrupLk1x/KZQq897jPxESiQf/HuHJPahH2FJmewkMifdiaMWIkOYR+vcG13bvch5pRLPa8igTz1xZb6v2Xg==",
   "success": true,
   "projectFilePath": "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\BaterPonto.Infra2\\BaterPonto.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eduar\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\dapperextensions\\1.7.0\\dapperextensions.1.7.0.nupkg.sha512",
+    "C:\\Users\\eduar\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\iesi.collections\\4.0.4\\iesi.collections.4.0.4.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

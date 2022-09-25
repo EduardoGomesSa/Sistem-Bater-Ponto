@@ -1,6 +1,8 @@
 ﻿using BaterPonto.Application.Commands;
 using BaterPonto.Application.Interfaces;
+using BaterPonto.Application.Validations;
 using BaterPonto.Domain.Entities;
+using FluentValidation.Results;
 using MediatR;
 
 namespace BaterPonto.Application.CadastroFuncionarioHandler
@@ -17,6 +19,8 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
 
         public Task<bool> Handle(AdicionarFuncionario request, CancellationToken cancellationToken)
         {
+            if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
+
             var funcionario = ConverterParaFuncionario(request);
 
             var funcionarioAdicionado = _cadastroFuncionarioService.Adicionar(funcionario);
@@ -42,7 +46,7 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         {
             var cargoFuncionario = new Cargo(
                     id: 0,
-                    nome: adicionarFuncionario.AdicionarCargo.Nome,
+                    nome: adicionarFuncionario?.AdicionarCargo?.Nome,
                     valorHora: adicionarFuncionario.AdicionarCargo.ValorHora,
                     cargaHoraria: adicionarFuncionario.AdicionarCargo.CargaHoraria
                 );
@@ -56,6 +60,12 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
                 idCargo: 0,
                 cargo: cargoFuncionario
                 );
+        }
+
+        // Validações
+        public ValidationResult ObterResultadoValidacao(AdicionarFuncionario adicionarFuncionario)
+        {
+            return new AdicionarFuncionarioValidation(_cadastroFuncionarioService).Validate(adicionarFuncionario);
         }
     }
 }

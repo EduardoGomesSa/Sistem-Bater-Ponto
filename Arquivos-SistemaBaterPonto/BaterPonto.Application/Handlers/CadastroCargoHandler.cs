@@ -4,7 +4,8 @@ using MediatR;
 
 namespace BaterPonto.Application.Handlers
 {
-    public class CadastroCargoHandler : IRequestHandler<AtualizarNomeCargo, bool>
+    public class CadastroCargoHandler : IRequestHandler<AtualizarNomeCargo, bool>,
+                                        IRequestHandler<AtualizarCargaHorariaCargo, bool>
     {
         private readonly ICadastroCargoService _cadastroCargoService;
 
@@ -16,6 +17,13 @@ namespace BaterPonto.Application.Handlers
         public Task<bool> Handle(AtualizarNomeCargo request, CancellationToken cancellationToken)
         {
             var nomeAtualizado = _cadastroCargoService.AtualizarNome(request.Id, request.Nome);
+
+            return Task.FromResult(nomeAtualizado);
+        }
+
+        public Task<bool> Handle(AtualizarCargaHorariaCargo request, CancellationToken cancellationToken)
+        {
+            var nomeAtualizado = _cadastroCargoService.AtualizarCargaHoraria(request.Id, request.CargaHoraria);
 
             return Task.FromResult(nomeAtualizado);
         }

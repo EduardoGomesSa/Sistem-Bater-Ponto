@@ -46,5 +46,10 @@ namespace BaterPonto.Infra.Services
         {
             return _funcionarioRepository.AtualizarNome(id, nome);
         }
+
+        public bool FuncionarioExiste(string cpf)
+        {
+            return _funcionarioRepository.FuncionarioExiste(cpf);
+        }
     }
 }

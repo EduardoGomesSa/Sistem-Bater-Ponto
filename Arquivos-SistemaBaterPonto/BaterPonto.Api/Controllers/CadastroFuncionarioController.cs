@@ -17,27 +17,33 @@ namespace BaterPonto.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] AdicionarFuncionario adicionarFuncionario)
+        public async Task<IActionResult> Post([FromBody] AdicionarFuncionario adicionarFuncionario)
         {
-            var funcionarioAdicionado = _mediator.Send(adicionarFuncionario);
+            var funcionarioAdicionado = await _mediator.Send(adicionarFuncionario);
 
-            return Ok();
+            if(funcionarioAdicionado) return Ok();
+
+            return BadRequest(funcionarioAdicionado);
         }
 
         [HttpPatch("AtualizarNome")]
-        public IActionResult AtualizarNome([FromQuery]AtualizarNomeFuncionario atualizarNomeFuncionario)
+        public async Task<IActionResult> AtualizarNome([FromQuery]AtualizarNomeFuncionario atualizarNomeFuncionario)
         {
-            var nomeAtualizado = _mediator.Send(atualizarNomeFuncionario);
+            var nomeAtualizado = await _mediator.Send(atualizarNomeFuncionario);
 
-            return Ok();
+            if(nomeAtualizado) return Ok();
+
+            return BadRequest(nomeAtualizado);
         }
 
         [HttpPatch("AtualizarDataFimContratacao")]
-        public IActionResult AtualizarDataFimContratacao([FromQuery]AtualizarDataFimContratacaoFuncionario atualizarDataFimContratacaoFuncionario)
+        public async Task<IActionResult> AtualizarDataFimContratacao([FromQuery]AtualizarDataFimContratacaoFuncionario atualizarDataFimContratacaoFuncionario)
         {
-            var dataFimContratacaoAtualizada = _mediator.Send(atualizarDataFimContratacaoFuncionario);
+            var dataFimContratacaoAtualizada = await _mediator.Send(atualizarDataFimContratacaoFuncionario);
 
-            return Ok();
+            if(dataFimContratacaoAtualizada) return Ok();
+
+            return BadRequest(dataFimContratacaoAtualizada);
         }
     }
 }

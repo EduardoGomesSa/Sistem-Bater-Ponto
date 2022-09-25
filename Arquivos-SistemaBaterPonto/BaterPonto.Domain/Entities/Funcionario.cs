@@ -8,7 +8,7 @@ namespace BaterPonto.Domain.Entities
 
         }
 
-        public Funcionario(Int64 id, string? nome, string? cpf, DateTime dataInicioContratacao, DateTime? dataFimContratacao, int idCargo, Cargo cargo)
+        public Funcionario(Int64 id, string? nome, string? cpf, DateTime dataInicioContratacao, DateTime? dataFimContratacao, int idCargo, Cargo? cargo)
         {
             Id = id;
             Nome = nome;
@@ -26,7 +26,7 @@ namespace BaterPonto.Domain.Entities
         public DateTime DataInicioContratacao { get; private set; }
         public DateTime? DataFimContratacao { get; private set; }
         public Int64 IdCargo { get; private set; }
-        public Cargo Cargo { get; private set; }
+        public Cargo? Cargo { get; private set; }
 
         public void SetIdCargo(Int64 id)
         {

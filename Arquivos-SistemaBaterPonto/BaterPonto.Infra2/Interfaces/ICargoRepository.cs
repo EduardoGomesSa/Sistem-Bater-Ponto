@@ -6,5 +6,6 @@ namespace BaterPonto.Infra.Interfaces
     {
         Cargo BuscarPorNome(string nome);
         bool AtualizarNome(Int64 id, string nome);
+        bool AtualizarCargaHoraria(Int64 id, int cargaHoraria);
     }
 }
