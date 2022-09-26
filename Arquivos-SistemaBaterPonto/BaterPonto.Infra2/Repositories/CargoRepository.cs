@@ -31,5 +31,12 @@ namespace BaterPonto.Infra.Repositories
 
             return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
         }
+
+        public bool AtualizarValorHora(long id, decimal valorHora)
+        {
+            var sql = $"update cadastro.cargo set valor_hora = {valorHora} where id = {id}";
+
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+        }
     }
 }

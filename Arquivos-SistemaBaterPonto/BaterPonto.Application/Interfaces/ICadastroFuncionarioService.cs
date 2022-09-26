@@ -9,5 +9,6 @@ namespace BaterPonto.Application.Interfaces
         bool AtualizarDataFimContratacao(Int64 id, DateTime dataFim);
         bool FuncionarioExiste(string cpf);
         bool FuncionarioExiste(Int64 id);
+        bool FuncionarioAindaTrabalha(Int64 id);
     }
 }

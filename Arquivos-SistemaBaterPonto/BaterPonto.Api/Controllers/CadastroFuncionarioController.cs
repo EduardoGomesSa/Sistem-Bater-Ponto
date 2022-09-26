@@ -19,31 +19,53 @@ namespace BaterPonto.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AdicionarFuncionario adicionarFuncionario)
         {
-            var funcionarioAdicionado = await _mediator.Send(adicionarFuncionario);
+            try
+            {
+                var funcionarioAdicionado = await _mediator.Send(adicionarFuncionario);
 
-            if(funcionarioAdicionado) return Ok();
+                if (funcionarioAdicionado) return Ok();
 
-            return BadRequest(funcionarioAdicionado);
+                return BadRequest(funcionarioAdicionado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("AtualizarNome")]
         public async Task<IActionResult> AtualizarNome([FromQuery]AtualizarNomeFuncionario atualizarNomeFuncionario)
         {
-            var nomeAtualizado = await _mediator.Send(atualizarNomeFuncionario);
+            try
+            {
+                var nomeAtualizado = await _mediator.Send(atualizarNomeFuncionario);
 
-            if(nomeAtualizado) return Ok();
+                if (nomeAtualizado) return Ok();
 
-            return BadRequest(nomeAtualizado);
+                return BadRequest(nomeAtualizado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("AtualizarDataFimContratacao")]
         public async Task<IActionResult> AtualizarDataFimContratacao([FromQuery]AtualizarDataFimContratacaoFuncionario atualizarDataFimContratacaoFuncionario)
         {
-            var dataFimContratacaoAtualizada = await _mediator.Send(atualizarDataFimContratacaoFuncionario);
+            try
+            {
+                var dataFimContratacaoAtualizada = await _mediator.Send(atualizarDataFimContratacaoFuncionario);
 
-            if(dataFimContratacaoAtualizada) return Ok();
+                if (dataFimContratacaoAtualizada) return Ok();
 
-            return BadRequest(dataFimContratacaoAtualizada);
+                return BadRequest(dataFimContratacaoAtualizada);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
 }

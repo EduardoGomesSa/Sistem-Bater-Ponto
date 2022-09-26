@@ -7,5 +7,6 @@ namespace BaterPonto.Infra.Interfaces
         bool AtualizarNome(Int64 id, string nome);
         bool AtualizarCargaHoraria(Int64 id, int cargaHoraria);
         bool CargoExiste(Int64 id);
+        bool AtualizarValorHora(Int64 id, decimal valorHora);
     }
 }

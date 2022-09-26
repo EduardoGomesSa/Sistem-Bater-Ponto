@@ -8,7 +8,8 @@ using MediatR;
 namespace BaterPonto.Application.Handlers
 {
     public class CadastroCargoHandler : IRequestHandler<AtualizarNomeCargo, bool>,
-                                        IRequestHandler<AtualizarCargaHorariaCargo, bool>
+                                        IRequestHandler<AtualizarCargaHorariaCargo, bool>,
+                                        IRequestHandler<AtualizarValorHoraCargo, bool>
     {
         private readonly ICadastroCargoService _cadastroCargoService;
 
@@ -35,6 +36,15 @@ namespace BaterPonto.Application.Handlers
             return Task.FromResult(nomeAtualizado);
         }
 
+        public Task<bool> Handle(AtualizarValorHoraCargo request, CancellationToken cancellationToken)
+        {
+            if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
+
+            var valorHoraAtualizado = _cadastroCargoService.AtualizarValorHora(request.Id, request.ValorHora);
+
+            return Task.FromResult(valorHoraAtualizado);
+        }
+
         //Validações
         public ValidationResult ObterResultadoValidacao(AtualizarNomeCargo atualizarNomeCargo)
         {
@@ -44,6 +54,11 @@ namespace BaterPonto.Application.Handlers
         public ValidationResult ObterResultadoValidacao(AtualizarCargaHorariaCargo atualizarCargaHorariaCargo)
         {
             return new AtualizarCargaHorariaCargoValidation(_cadastroCargoService).Validate(atualizarCargaHorariaCargo);
+        }
+
+        public ValidationResult ObterResultadoValidacao(AtualizarValorHoraCargo atualizarValorHoraCargo)
+        {
+            return new AtualizarValorHoraCargoValidation(_cadastroCargoService).Validate(atualizarValorHoraCargo);
         }
     }
 }
