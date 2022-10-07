@@ -2,6 +2,7 @@
 using BaterPonto.Infra.Interfaces;
 using BaterPonto.Infra.Maps;
 using BaterPonto.Infra.Repositories.Data;
+using NHibernate.Id.Insert;
 
 namespace BaterPonto.Infra.Repositories
 {
@@ -37,6 +38,24 @@ namespace BaterPonto.Infra.Repositories
             var sql = $"update cadastro.cargo set valor_hora = {valorHora} where id = {id}";
 
             return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+        }
+
+        public bool AtualizarEstadoCargo(long id, bool ativo)
+        {
+            var sql = $"update cadastro.cargo set ativo = {ativo} where id = {id};";
+
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+        }
+
+        public bool CargoTemFuncionario(long id)
+        {
+            var sql = $"select* from cadastro.funcionario where id_cargo = {id};";
+
+            var cargo = DBHelper<Cargo>.InstanciaNpgsql.GetQuery(sql);
+
+            if (cargo.Count > 0) return true;
+
+            return false;
         }
     }
 }

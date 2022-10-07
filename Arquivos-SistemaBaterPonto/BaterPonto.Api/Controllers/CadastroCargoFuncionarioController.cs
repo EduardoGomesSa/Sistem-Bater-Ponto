@@ -66,5 +66,22 @@ namespace BaterPonto.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPatch("AtualizarEstadoDoCargo")]
+        public async Task<IActionResult> AtualizarEstadoDoCargo([FromQuery] AtualizarEstadoCargo atualizarEstadoCargo)
+        {
+            try
+            {
+                var estadoAtualizado = await _mediator.Send(atualizarEstadoCargo);
+
+                if (estadoAtualizado) return Ok(estadoAtualizado);
+
+                return BadRequest(estadoAtualizado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

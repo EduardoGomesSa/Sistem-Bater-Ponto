@@ -7,6 +7,7 @@ namespace BaterPonto.Infra.Services
     {
         private readonly ICargoRepository _cargoRepository;
 
+
         public CadastroCargoService(ICargoRepository cargoRepository)
         {
             _cargoRepository = cargoRepository;
@@ -15,6 +16,12 @@ namespace BaterPonto.Infra.Services
         public bool AtualizarCargaHoraria(long id, int cargaHoraria)
         {
             return _cargoRepository.AtualizarCargaHoraria(id, cargaHoraria);
+        }
+
+        public bool AtualizarEstadoCargo(long id, bool ativo)
+        {
+
+            return _cargoRepository.AtualizarEstadoCargo(id, ativo);
         }
 
         public bool AtualizarNome(long id, string nome)
@@ -34,6 +41,11 @@ namespace BaterPonto.Infra.Services
             if (cargo == null) return false;
 
             return cargo.Id > 0;
+        }
+
+        public bool CargoTemFuncionario(long id)
+        {
+            return _cargoRepository.CargoTemFuncionario(id);
         }
     }
 }

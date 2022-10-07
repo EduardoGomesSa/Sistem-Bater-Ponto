@@ -32,7 +32,7 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         {
             if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
 
-            var nomeAtualizado = _cadastroFuncionarioService.AtualizarNome(request.Id, request.Nome);
+            var nomeAtualizado = _cadastroFuncionarioService.AtualizarNome(request.Id, request?.Nome);
 
             return Task.FromResult(nomeAtualizado);
         }
@@ -51,15 +51,16 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
             var cargoFuncionario = new Cargo(
                     id: 0,
                     nome: adicionarFuncionario?.AdicionarCargo?.Nome,
-                    valorHora: adicionarFuncionario.AdicionarCargo.ValorHora,
-                    cargaHoraria: adicionarFuncionario.AdicionarCargo.CargaHoraria
+                    valorHora: adicionarFuncionario?.AdicionarCargo != null ? adicionarFuncionario.AdicionarCargo.ValorHora : 1,
+                    cargaHoraria: adicionarFuncionario?.AdicionarCargo != null ? adicionarFuncionario.AdicionarCargo.CargaHoraria : 1,
+                    ativo: true
                 );
 
             return new Funcionario(
                 id: 0,
-                nome: adicionarFuncionario.Nome,
-                cpf: adicionarFuncionario.Cpf,
-                dataInicioContratacao: adicionarFuncionario.DataInicioContratacao,
+                nome: adicionarFuncionario?.Nome,
+                cpf: adicionarFuncionario?.Cpf,
+                dataInicioContratacao: adicionarFuncionario != null ? adicionarFuncionario.DataInicioContratacao : DateTime.Now,
                 dataFimContratacao: null,
                 idCargo: 0,
                 cargo: cargoFuncionario
