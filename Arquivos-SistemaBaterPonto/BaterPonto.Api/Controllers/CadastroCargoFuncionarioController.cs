@@ -16,6 +16,12 @@ namespace BaterPonto.Api.Controllers
             _mediator = mediator;
         }
 
+        [HttpPost("AdicionarCargo")]
+        public async Task<IActionResult> AdicionarCargo([FromBody]AdicionarCargo adicionarCargo)
+        {
+            return Ok();
+        }
+
         [HttpPatch("AtualizarNomeCargo")]
         public async Task<IActionResult> AtualizarNomeCargo([FromQuery] AtualizarNomeCargo atualizarNomeCargo)
         {

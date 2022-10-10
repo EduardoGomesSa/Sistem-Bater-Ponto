@@ -1,6 +1,8 @@
 ﻿using BaterPonto.Application.Interfaces;
 using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
+using BaterPonto.Infra.Repositories.Data;
+using NHibernate.Mapping;
 
 namespace BaterPonto.Infra.Services
 {
@@ -70,6 +72,25 @@ namespace BaterPonto.Infra.Services
             if (funcionario == null) return false;
 
             return funcionario.DataFimContratacao != null;
+        }
+
+        public bool CargoAindaTemFuncionarioCadastrado(Int64 id)
+        {
+            var listaFuncionario = _funcionarioRepository.CargoTemFuncionario(id);
+
+            List<Funcionario> funcionariosEmpregados = new List<Funcionario>();
+
+            foreach (var funcionario in listaFuncionario)
+            {
+                if(funcionario.DataFimContratacao == null)
+                {
+                    funcionariosEmpregados.Add(funcionario);
+                }
+            }
+
+            if(funcionariosEmpregados.Count > 0) return true;
+
+            return false;
         }
     }
 }

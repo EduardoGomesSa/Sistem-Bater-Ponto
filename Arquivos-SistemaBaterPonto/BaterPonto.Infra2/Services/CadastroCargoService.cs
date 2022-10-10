@@ -1,4 +1,5 @@
-﻿using BaterPonto.Domain.Entities;
+﻿using BaterPonto.Application.Interfaces;
+using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
 
 namespace BaterPonto.Infra.Services
@@ -6,11 +7,12 @@ namespace BaterPonto.Infra.Services
     public class CadastroCargoService : ICadastroCargoService
     {
         private readonly ICargoRepository _cargoRepository;
+        private readonly ICadastroFuncionarioService _cadastroFuncionarioService;
 
-
-        public CadastroCargoService(ICargoRepository cargoRepository)
+        public CadastroCargoService(ICargoRepository cargoRepository, ICadastroFuncionarioService cadastroFuncionarioService)
         {
             _cargoRepository = cargoRepository;
+            _cadastroFuncionarioService = cadastroFuncionarioService;   
         }
 
         public bool AtualizarCargaHoraria(long id, int cargaHoraria)
@@ -43,9 +45,18 @@ namespace BaterPonto.Infra.Services
             return cargo.Id > 0;
         }
 
-        public bool CargoTemFuncionario(long id)
+        public bool CargoExiste(string nome)
         {
-            return _cargoRepository.CargoTemFuncionario(id);
+            var resultadoBusca = _cargoRepository.BuscarPorNome(nome);
+
+            if(resultadoBusca == null) return false;
+
+            return resultadoBusca.Id > 0;
+        }
+
+        public bool CargoTemFuncionarioAtivo(long id)
+        {
+            return _cadastroFuncionarioService.CargoAindaTemFuncionarioCadastrado(id);
         }
     }
 }

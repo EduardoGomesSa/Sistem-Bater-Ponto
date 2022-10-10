@@ -46,16 +46,5 @@ namespace BaterPonto.Infra.Repositories
 
             return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
         }
-
-        public bool CargoTemFuncionario(long id)
-        {
-            var sql = $"select* from cadastro.funcionario where id_cargo = {id};";
-
-            var cargo = DBHelper<Cargo>.InstanciaNpgsql.GetQuery(sql);
-
-            if (cargo.Count > 0) return true;
-
-            return false;
-        }
     }
 }

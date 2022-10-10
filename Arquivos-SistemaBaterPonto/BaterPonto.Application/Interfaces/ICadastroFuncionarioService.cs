@@ -10,5 +10,6 @@ namespace BaterPonto.Application.Interfaces
         bool FuncionarioExiste(string cpf);
         bool FuncionarioExiste(Int64 id);
         bool FuncionarioAindaTrabalha(Int64 id);
+        bool CargoAindaTemFuncionarioCadastrado(Int64 id);
     }
 }

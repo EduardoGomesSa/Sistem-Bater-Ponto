@@ -1,6 +1,8 @@
-﻿namespace BaterPonto.Application.Commands
+﻿using MediatR;
+
+namespace BaterPonto.Application.Commands
 {
-    public class AdicionarCargo
+    public class AdicionarCargo : IRequest<bool>
     {
         public string? Nome { get; set; }
         public decimal ValorHora { get; set; }
