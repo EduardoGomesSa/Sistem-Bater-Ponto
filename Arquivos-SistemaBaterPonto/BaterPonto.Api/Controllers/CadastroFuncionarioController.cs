@@ -65,7 +65,20 @@ namespace BaterPonto.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> MudarCargoFuncionario()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

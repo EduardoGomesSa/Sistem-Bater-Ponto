@@ -2,6 +2,7 @@
 using BaterPonto.Application.Interfaces;
 using BaterPonto.Application.Validations;
 using BaterPonto.Domain.Entities;
+using BaterPonto.Infra.Interfaces;
 using FluentValidation.Results;
 using MediatR;
 
@@ -9,12 +10,15 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
 {
     public class CadastroFuncionarioHandler : IRequestHandler<AdicionarFuncionario, bool>,
                                               IRequestHandler<AtualizarNomeFuncionario, bool>,
-                                              IRequestHandler<AtualizarDataFimContratacaoFuncionario, bool>
+                                              IRequestHandler<AtualizarDataFimContratacaoFuncionario, bool>,
+                                              IRequestHandler<MudarCargoDeFuncionario, bool>
     {
         readonly private ICadastroFuncionarioService _cadastroFuncionarioService;
-        public CadastroFuncionarioHandler(ICadastroFuncionarioService cadastroFuncionarioService)
+        readonly private ICadastroCargoService _cadastroCargoService;
+        public CadastroFuncionarioHandler(ICadastroFuncionarioService cadastroFuncionarioService, ICadastroCargoService cadastroCargoService)
         {
             _cadastroFuncionarioService = cadastroFuncionarioService;
+            _cadastroCargoService = cadastroCargoService;
         }
 
         public Task<bool> Handle(AdicionarFuncionario request, CancellationToken cancellationToken)
@@ -46,6 +50,13 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
             return Task.FromResult(dataFimAtualizada);
         }
 
+        public Task<bool> Handle(MudarCargoDeFuncionario request, CancellationToken cancellationToken)
+        {
+            if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
+            throw new NotImplementedException();
+        }
+
+        // Conversões
         private Funcionario ConverterParaFuncionario(AdicionarFuncionario adicionarFuncionario)
         {
             var cargoFuncionario = new Cargo(
@@ -81,6 +92,11 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         public ValidationResult ObterResultadoValidacao(AtualizarNomeFuncionario atualizarNomeFuncionario)
         {
             return new AtualizarNomeFuncionarioValidation(_cadastroFuncionarioService).Validate(atualizarNomeFuncionario);
+        }
+
+        public ValidationResult ObterResultadoValidacao(MudarCargoDeFuncionario mudarCargoDeFuncionario)
+        {
+            return new MudarCargoDeFuncionarioValidation(_cadastroFuncionarioService, _cadastroCargoService).Validate(mudarCargoDeFuncionario);
         }
     }
 }
