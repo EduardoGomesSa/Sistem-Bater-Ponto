@@ -19,7 +19,18 @@ namespace BaterPonto.Api.Controllers
         [HttpPost("AdicionarCargo")]
         public async Task<IActionResult> AdicionarCargo([FromBody]AdicionarCargo adicionarCargo)
         {
-            return Ok();
+            try
+            {
+                var cargoAdicionado = await _mediator.Send(adicionarCargo);
+
+                if(cargoAdicionado) return Ok(cargoAdicionado);
+
+                return BadRequest(cargoAdicionado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("AtualizarNomeCargo")]

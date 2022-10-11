@@ -15,6 +15,11 @@ namespace BaterPonto.Infra.Services
             _cadastroFuncionarioService = cadastroFuncionarioService;   
         }
 
+        public bool Adicionar(Cargo cargo)
+        {
+            return _cargoRepository.Inserir(cargo) > 0;
+        }
+
         public bool AtualizarCargaHoraria(long id, int cargaHoraria)
         {
             return _cargoRepository.AtualizarCargaHoraria(id, cargaHoraria);

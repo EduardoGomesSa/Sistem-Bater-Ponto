@@ -1,6 +1,7 @@
 ﻿using BaterPonto.Application.Commands;
 using BaterPonto.Application.Interfaces;
 using BaterPonto.Application.Validations;
+using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
 using FluentValidation.Results;
 using MediatR;
@@ -10,7 +11,8 @@ namespace BaterPonto.Application.Handlers
     public class CadastroCargoHandler : IRequestHandler<AtualizarNomeCargo, bool>,
                                         IRequestHandler<AtualizarCargaHorariaCargo, bool>,
                                         IRequestHandler<AtualizarValorHoraCargo, bool>,
-                                        IRequestHandler<AtualizarEstadoCargo, bool>
+                                        IRequestHandler<AtualizarEstadoCargo, bool>,
+                                        IRequestHandler<AdicionarCargo, bool>
     {
         private readonly ICadastroCargoService _cadastroCargoService;
 
@@ -55,6 +57,27 @@ namespace BaterPonto.Application.Handlers
             return Task.FromResult(estadoAtualizado);
         }
 
+        public Task<bool> Handle(AdicionarCargo request, CancellationToken cancellationToken)
+        {
+            if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
+
+            var cargoAdicionado = _cadastroCargoService.Adicionar(this.ConverterParacargo(request));
+
+            return Task.FromResult(cargoAdicionado);
+        }
+
+        // Converções
+        public Cargo ConverterParacargo(AdicionarCargo adicionarCargo)
+        {
+            return new Cargo(
+                    id: 0,
+                    nome: adicionarCargo.Nome,
+                    valorHora: adicionarCargo.ValorHora,
+                    cargaHoraria: adicionarCargo.CargaHoraria,
+                    ativo: true
+                );
+        }
+
         //Validações
         public ValidationResult ObterResultadoValidacao(AtualizarEstadoCargo atualizarEstadoCargo)
         {
@@ -74,6 +97,11 @@ namespace BaterPonto.Application.Handlers
         public ValidationResult ObterResultadoValidacao(AtualizarValorHoraCargo atualizarValorHoraCargo)
         {
             return new AtualizarValorHoraCargoValidation(_cadastroCargoService).Validate(atualizarValorHoraCargo);
+        }
+
+        public ValidationResult ObterResultadoValidacao(AdicionarCargo adicionarCargo)
+        {
+            return new AdicionarCargoValidation(_cadastroCargoService).Validate(adicionarCargo);
         }
     }
 }
