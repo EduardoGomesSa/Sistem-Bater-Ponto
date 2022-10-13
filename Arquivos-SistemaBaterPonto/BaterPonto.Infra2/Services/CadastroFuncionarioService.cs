@@ -2,6 +2,7 @@
 using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
 using BaterPonto.Infra.Repositories.Data;
+using Microsoft.VisualBasic;
 using NHibernate.Mapping;
 
 namespace BaterPonto.Infra.Services
@@ -50,7 +51,7 @@ namespace BaterPonto.Infra.Services
         {
             return _funcionarioRepository.AtualizarNome(id, nome);
         }
-        //Validações
+
         public bool FuncionarioExiste(Int64 id)
         {
             var funcionario = _funcionarioRepository.BuscarPorId(id);
@@ -71,7 +72,9 @@ namespace BaterPonto.Infra.Services
 
             if (funcionario == null) return false;
 
-            return funcionario.DataFimContratacao != null;
+            if (funcionario.DataFimContratacao == null) return true;
+
+            return false;
         }
 
         public bool CargoAindaTemFuncionarioCadastrado(Int64 id)
@@ -91,6 +94,11 @@ namespace BaterPonto.Infra.Services
             if(funcionariosEmpregados.Count > 0) return true;
 
             return false;
+        }
+
+        public bool MudarCargoFuncionario(long idFuncionario, long idCargo)
+        {
+            return _funcionarioRepository.MudarCargoFuncionario(idFuncionario, idCargo);
         }
     }
 }

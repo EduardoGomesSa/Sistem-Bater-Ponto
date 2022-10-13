@@ -11,5 +11,6 @@ namespace BaterPonto.Application.Interfaces
         bool FuncionarioExiste(Int64 id);
         bool FuncionarioAindaTrabalha(Int64 id);
         bool CargoAindaTemFuncionarioCadastrado(Int64 id);
+        bool MudarCargoFuncionario(Int64 idFuncionario, Int64 idCargo);
     }
 }

@@ -40,5 +40,14 @@ namespace BaterPonto.Infra.Repositories
 
             return null;
         }
+
+        public bool MudarCargoFuncionario(long idFuncionario, long idCargo)
+        {
+            
+
+            var query = $"update cadastro.funcionario set id_cargo = {idCargo} where id = {idFuncionario};";
+
+            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) != null;
+        }
     }
 }

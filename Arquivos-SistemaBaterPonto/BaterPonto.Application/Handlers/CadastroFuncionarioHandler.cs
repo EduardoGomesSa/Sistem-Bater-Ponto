@@ -53,7 +53,10 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         public Task<bool> Handle(MudarCargoDeFuncionario request, CancellationToken cancellationToken)
         {
             if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
-            throw new NotImplementedException();
+
+            var cargoAlterado = _cadastroFuncionarioService.MudarCargoFuncionario(request.IdFuncionario, request.IdCargo);
+
+            return Task.FromResult(cargoAlterado);
         }
 
         // Conversões

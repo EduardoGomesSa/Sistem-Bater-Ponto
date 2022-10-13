@@ -29,6 +29,7 @@ builder.Services.AddScoped<IRequestHandler<AtualizarCargaHorariaCargo, bool>, Ca
 builder.Services.AddScoped<IRequestHandler<AtualizarValorHoraCargo, bool>, CadastroCargoHandler>();
 builder.Services.AddScoped<IRequestHandler<AtualizarEstadoCargo, bool>, CadastroCargoHandler>();
 builder.Services.AddScoped<IRequestHandler<AdicionarCargo, bool>, CadastroCargoHandler>();
+builder.Services.AddScoped<IRequestHandler<MudarCargoDeFuncionario, bool>, CadastroFuncionarioHandler>();
 builder.Services.AddScoped<ICadastroFuncionarioService, CadastroFuncionarioService>();
 builder.Services.AddScoped<ICadastroCargoService, CadastroCargoService>();
 builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();

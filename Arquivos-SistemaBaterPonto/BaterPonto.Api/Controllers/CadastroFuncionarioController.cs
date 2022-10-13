@@ -67,17 +67,20 @@ namespace BaterPonto.Api.Controllers
             }
         }
 
-        [HttpPatch]
-        public async Task<IActionResult> MudarCargoFuncionario()
+        [HttpPatch("MudarCargoFuncionario")]
+        public async Task<IActionResult> MudarCargoFuncionario([FromQuery] MudarCargoDeFuncionario mudarCargoDeFuncionario)
         {
             try
             {
+                var cargoMudado = await _mediator.Send(mudarCargoDeFuncionario);
 
+                if (cargoMudado) return Ok(cargoMudado);
+
+                return BadRequest(cargoMudado);
             }
             catch (Exception ex)
             {
-
-                throw;
+                return BadRequest(ex.Message);
             }
         }
     }
