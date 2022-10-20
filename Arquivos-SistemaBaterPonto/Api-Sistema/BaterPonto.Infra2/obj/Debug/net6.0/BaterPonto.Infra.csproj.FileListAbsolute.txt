@@ -1,0 +1,17 @@
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.csproj.AssemblyReference.cache
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.AssemblyInfoInputs.cache
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.AssemblyInfo.cs
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.csproj.CoreCompileInputs.cache
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Infra.deps.json
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Infra.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Infra.pdb
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Domain.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Domain.pdb
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.csproj.CopyComplete
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\refint\BaterPonto.Infra.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\BaterPonto.Infra.pdb
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\obj\Debug\net6.0\ref\BaterPonto.Infra.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Application.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\BaterPonto.Infra2\bin\Debug\net6.0\BaterPonto.Application.pdb

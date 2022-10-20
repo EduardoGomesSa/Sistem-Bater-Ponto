@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4dGkUqUy46MndXtBWTy0A2Z72p7YMTLfXMgYMH3mewqmUF0DzM1O/xOkBSC/yfAcNhOUv7WB8+f7SrRJsE9h+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\eduar\\source\\repos\\Sistem-Bater-Ponto\\Arquivos-SistemaBaterPonto\\Api-Sistema\\BaterPonto.Application\\BaterPonto.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\eduar\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\eduar\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\eduar\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
