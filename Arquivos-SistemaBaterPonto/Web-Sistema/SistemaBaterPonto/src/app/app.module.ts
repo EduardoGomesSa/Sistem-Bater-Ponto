@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './navegacao/footer/footer.component';
 import { HomeComponent } from './navegacao/home/home.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
+import { CadastroFuncionarioComponent } from './cadastros/cadastro-funcionario/cadastro-funcionario.component';
+import { CadastroCargoComponent } from './cadastros/cadastro-cargo/cadastro-cargo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    CadastroFuncionarioComponent,
+    CadastroCargoComponent
   ],
   imports: [
     HttpClientModule,
