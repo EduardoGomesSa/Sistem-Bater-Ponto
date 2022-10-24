@@ -4,6 +4,7 @@ import { CadastroCargoComponent } from './cadastros/cadastro-cargo/cadastro-carg
 import { CadastroFuncionarioComponent } from './cadastros/cadastro-funcionario/cadastro-funcionario.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'funcionario', component: CadastroFuncionarioComponent},
   {path: 'cargo', component: CadastroCargoComponent}
 ];
