@@ -1,7 +1,34 @@
 <!-- Page Content -->
 <div class="container main-container">
-    <p>cadastro-funcionario works!</p>
-
-    <h1>Aqui fica os funcionários</h1>
+    <form>
+        <div class="form-group">
+          <label for="nameid">Nome do funcionário</label>
+          <input type="text" class="form-control" id="nameid" aria-describedby="nameHelp" placeholder="Seu nome">
+          <small id="nameHelp" class="form-text text-muted">Nunca vamos compartilhar seu nome, com ninguém.</small>
+        </div>
+        <div class="form-group">
+            <label for="cpfid">CPF</label>
+            <input type="text" class="form-control" id="cpfid" aria-describedby="cpfHelp" placeholder="Seu CPF">
+            <small id="cpfHelp" class="form-text text-muted">Nunca vamos compartilhar seu CPF, com ninguém.</small>
+          </div>
+          <div class="form-group">
+            <label for="cargonomeid">Nome do cargo</label>
+            <input type="text" class="form-control" id="cargonomeid" aria-describedby="namecargoHelp" placeholder="O nome do cargo">
+          </div>
+          <div class="form-group">
+            <label for="valorhoracargoid">Valor da hora do cargo</label>
+            <input type="number" class="form-control" id="valorhoracargoid" aria-describedby="valorhoraHelp" placeholder="O valor da hora do cargo">
+          </div>
+          <div class="form-group">
+            <label for="cargahorariaid">Carga horária do cargo</label>
+            <input type="number" class="form-control" id="cargahorariaid" aria-describedby="cargahorariaHelp" placeholder="SA carga horária do cargo">
+          </div>
+          <div class="form-group">
+            <label for="datacontratacaoid">Data de contratação</label>
+            <input type="date" class="form-control" id="datacontratacaoid" aria-describedby="datacontratacaoHelp" placeholder="Seu email">
+          </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
 </div>    
 <!-- Fim Content -->  
+

@@ -9,6 +9,7 @@ import { HomeComponent } from './navegacao/home/home.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
 import { CadastroFuncionarioComponent } from './cadastros/cadastro-funcionario/cadastro-funcionario.component';
 import { CadastroCargoComponent } from './cadastros/cadastro-cargo/cadastro-cargo.component';
+import { SobreComponent } from './institucional/sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CadastroCargoComponent } from './cadastros/cadastro-cargo/cadastro-carg
     HomeComponent,
     MenuComponent,
     CadastroFuncionarioComponent,
-    CadastroCargoComponent
+    CadastroCargoComponent,
+    SobreComponent
   ],
   imports: [
     HttpClientModule,
