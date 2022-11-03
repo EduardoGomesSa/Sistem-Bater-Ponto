@@ -1,6 +1,6 @@
 ﻿using BaterPonto.Domain.Entities;
 
-namespace BaterPonto.Infra.Interfaces
+namespace BaterPonto.Application.Interfaces
 {
     public interface ICadastroCargoService
     {

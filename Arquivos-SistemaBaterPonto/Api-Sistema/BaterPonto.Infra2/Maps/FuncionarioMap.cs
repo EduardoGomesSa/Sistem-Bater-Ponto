@@ -3,9 +3,6 @@ using DapperExtensions.Mapper;
 
 namespace BaterPonto.Infra.Maps
 {
-    //public string? Cpf { get; private set; }
-    //public DateTime DataInicioContratacao { get; private set; }
-    //public DateTime? DataFimContratacao { get; private set; }
     public class FuncionarioMap : ClassMapper<Funcionario>
     {
         public FuncionarioMap()

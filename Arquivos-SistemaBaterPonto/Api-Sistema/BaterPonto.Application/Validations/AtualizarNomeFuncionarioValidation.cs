@@ -7,8 +7,6 @@ namespace BaterPonto.Application.Validations
 {
     public class AtualizarNomeFuncionarioValidation : AbstractValidator<AtualizarNomeFuncionario>
     {
-        //public Int64 Id { get; set; }
-        //public string? Nome { get; set; }
         public AtualizarNomeFuncionarioValidation(ICadastroFuncionarioService _cadastroFuncionarioService)
         {
             RuleFor(f => f).Must(a => _cadastroFuncionarioService.FuncionarioExiste(a.Id)).WithMessage("O funcionário não existe");

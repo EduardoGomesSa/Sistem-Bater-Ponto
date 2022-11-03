@@ -23,14 +23,14 @@ namespace BaterPonto.Infra.Repositories
         {
             var sql = $"update cadastro.cargo set nome = '{nome}' where id = {id};";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null ? true : false;
         }
 
         public bool AtualizarCargaHoraria(long id, int cargaHoraria)
         {
             var sql = $"update cadastro.cargo set carga_horaria = {cargaHoraria} where id = {id};";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null ? true : false;
         }
 
         public bool AtualizarValorHora(long id, decimal valorHora)

@@ -2,7 +2,6 @@
 using BaterPonto.Application.Interfaces;
 using BaterPonto.Application.Validations;
 using BaterPonto.Domain.Entities;
-using BaterPonto.Infra.Interfaces;
 using FluentValidation.Results;
 using MediatR;
 
@@ -36,7 +35,7 @@ namespace BaterPonto.Application.CadastroFuncionarioHandler
         {
             if (!this.ObterResultadoValidacao(request).IsValid) return Task.FromResult(false);
 
-            var nomeAtualizado = _cadastroFuncionarioService.AtualizarNome(request.Id, request?.Nome);
+            var nomeAtualizado = _cadastroFuncionarioService.AtualizarNome(request.Id, request.Nome != null ? request.Nome : String.Empty);
 
             return Task.FromResult(nomeAtualizado);
         }

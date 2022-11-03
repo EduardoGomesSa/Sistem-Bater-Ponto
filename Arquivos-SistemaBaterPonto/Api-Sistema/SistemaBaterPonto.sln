@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaterPonto.Domain", "BaterP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaterPonto.Infra", "BaterPonto.Infra2\BaterPonto.Infra.csproj", "{5A92C0CE-9CD5-4464-8B51-79B504358203}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaterPonto.Testes", "BaterPonto.Testes\BaterPonto.Testes.csproj", "{2A037128-A15B-4026-88F7-99DC2E0E3660}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaterPonto.Testes", "BaterPonto.Testes\BaterPonto.Testes.csproj", "{D00499FD-B4BC-4E37-95B2-38859311DF3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{5A92C0CE-9CD5-4464-8B51-79B504358203}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A92C0CE-9CD5-4464-8B51-79B504358203}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A92C0CE-9CD5-4464-8B51-79B504358203}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A037128-A15B-4026-88F7-99DC2E0E3660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A037128-A15B-4026-88F7-99DC2E0E3660}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A037128-A15B-4026-88F7-99DC2E0E3660}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A037128-A15B-4026-88F7-99DC2E0E3660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00499FD-B4BC-4E37-95B2-38859311DF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00499FD-B4BC-4E37-95B2-38859311DF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00499FD-B4BC-4E37-95B2-38859311DF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00499FD-B4BC-4E37-95B2-38859311DF3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

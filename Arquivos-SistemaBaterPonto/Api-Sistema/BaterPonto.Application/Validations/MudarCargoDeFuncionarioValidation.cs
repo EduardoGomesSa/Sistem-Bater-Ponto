@@ -1,6 +1,5 @@
 ﻿using BaterPonto.Application.Commands;
 using BaterPonto.Application.Interfaces;
-using BaterPonto.Infra.Interfaces;
 using FluentValidation;
 
 namespace BaterPonto.Application.Validations
