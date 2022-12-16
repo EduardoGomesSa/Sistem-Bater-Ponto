@@ -52,6 +52,12 @@ namespace BaterPonto.Infra.Services
             return _funcionarioRepository.AtualizarNome(id, nome);
         }
 
+        public bool MudarCargoFuncionario(long idFuncionario, long idCargo)
+        {
+            return _funcionarioRepository.MudarCargoFuncionario(idFuncionario, idCargo);
+        }
+
+        // Verificações
         public bool FuncionarioExiste(Int64 id)
         {
             var funcionario = _funcionarioRepository.BuscarPorId(id);
@@ -94,11 +100,6 @@ namespace BaterPonto.Infra.Services
             if(funcionariosEmpregados.Count > 0) return true;
 
             return false;
-        }
-
-        public bool MudarCargoFuncionario(long idFuncionario, long idCargo)
-        {
-            return _funcionarioRepository.MudarCargoFuncionario(idFuncionario, idCargo);
         }
     }
 }

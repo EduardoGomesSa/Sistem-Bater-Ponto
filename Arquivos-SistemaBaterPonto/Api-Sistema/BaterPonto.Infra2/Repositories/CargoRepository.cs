@@ -10,7 +10,7 @@ namespace BaterPonto.Infra.Repositories
     {
         public Cargo BuscarPorNome(string nome)
         {
-            var sql = $"select * from cadastro.cargo where nome = '{nome}';";
+            string sql = $"select * from cadastro.cargo where nome = '{nome}';";
 
             var cargo = DBHelper<Cargo>.InstanciaNpgsql.GetQuery(sql).FirstOrDefault();
 

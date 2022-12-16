@@ -102,3 +102,8 @@ C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Si
 C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\BaterPonto.Api.pdb
 C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\BaterPonto.Api.genruntimeconfig.cache
 C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\ref\BaterPonto.Api.dll
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\staticwebassets\msbuild.BaterPonto.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.BaterPonto.Api.props
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BaterPonto.Api.props
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BaterPonto.Api.props
+C:\Users\eduar\source\repos\Sistem-Bater-Ponto\Arquivos-SistemaBaterPonto\Api-Sistema\BaterPonto.Api\obj\Debug\net6.0\staticwebassets.pack.json
