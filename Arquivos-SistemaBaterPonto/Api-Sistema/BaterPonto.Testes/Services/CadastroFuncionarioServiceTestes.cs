@@ -111,36 +111,22 @@ namespace BaterPonto.Testes.Services
             Assert.True(resultado);
         }
 
-        //[Fact(DisplayName = "Funcionario Existe Sucesso")]
-        //[Trait("Categoria", "Service Funcionario")]
-        //public void FuncionarioExiste_Sucesso()
-        //{
-        //    // Arrange
-        //    var cargo = new Cargo(
-        //            id: 2,
-        //            nome: "Dev Back End",
-        //            valorHora: 100,
-        //            cargaHoraria: 8,
-        //            ativo: true
-        //            );
+        [Fact(DisplayName = "Mudar Cargo Funcionario Sucesso")]
+        [Trait("Categoria", "Service Funcionario")]
+        public void MudarCargoFuncionario_Sucesso()
+        {
+            // Arrange
+            _mockFuncionarioRepository.Setup(f => f.MudarCargoFuncionario(It.IsAny<long>(), It.IsAny<long>()))
+                .Returns(true);
 
-        //    var funcionario = new Funcionario(
-        //    id: 1,
-        //    nome: "joao",
-        //    cpf: "11122233344",
-        //    dataInicioContratacao: DateTime.MinValue,
-        //    dataFimContratacao: DateTime.MaxValue,
-        //    idCargo: 2,
-        //    cargo
-        //    );
+            var funcionarioService = new CadastroFuncionarioService(_mockFuncionarioRepository.Object, _mockCargoRepository.Object);
 
-        //    _mockFuncionarioRepository.Setup(f => f.BuscarPorId(It.IsAny<long>()))
-        //        .Returns(funcionario);
+            // Act
+            var resultado = funcionarioService.MudarCargoFuncionario(1, 1);
 
-        //    var funcionarioService = new CadastroFuncionarioService(_mockFuncionarioRepository.Object, _mockCargoRepository.Object);
-
-        //    // Act
-
-        //}
+            // Assert
+            Assert.True(resultado);
+        }
+        
     }
 }
