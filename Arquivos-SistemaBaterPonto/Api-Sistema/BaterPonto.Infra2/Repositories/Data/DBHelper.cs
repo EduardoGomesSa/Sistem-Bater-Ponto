@@ -11,7 +11,7 @@ namespace BaterPonto.Infra.Repositories.Data
         private IDbTransaction _transacao = null;
         private readonly FactoryConnection factory;
 
-        public static DBHelper<TEntity> InstanciaNpgsql = new DBHelper<TEntity>(new Postgres());
+        public static DBHelper<TEntity> InstanciaNpgsql = new (new Postgres());
 
         private DBHelper(FactoryConnection factory)
         {

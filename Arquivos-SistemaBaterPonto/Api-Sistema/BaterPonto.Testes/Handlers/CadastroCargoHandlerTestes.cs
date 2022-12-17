@@ -1,5 +1,4 @@
-﻿
-using BaterPonto.Application.Commands;
+﻿using BaterPonto.Application.Commands;
 using BaterPonto.Application.Handlers;
 using BaterPonto.Application.Interfaces;
 using BaterPonto.Domain.Entities;

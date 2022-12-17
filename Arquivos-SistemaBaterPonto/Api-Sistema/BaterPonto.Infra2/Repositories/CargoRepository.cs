@@ -16,35 +16,35 @@ namespace BaterPonto.Infra.Repositories
 
             if (cargo != null) return cargo;
 
-            return null;
+            return new Cargo();
         }
 
         public bool AtualizarNome(long id, string nome)
         {
             var sql = $"update cadastro.cargo set nome = '{nome}' where id = {id};";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null ? true : false;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) >= 0;
         }
 
         public bool AtualizarCargaHoraria(long id, int cargaHoraria)
         {
             var sql = $"update cadastro.cargo set carga_horaria = {cargaHoraria} where id = {id};";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null ? true : false;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) >= 0;
         }
 
         public bool AtualizarValorHora(long id, decimal valorHora)
         {
             var sql = $"update cadastro.cargo set valor_hora = {valorHora} where id = {id}";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) >= 0;
         }
 
         public bool AtualizarEstadoCargo(long id, bool ativo)
         {
             var sql = $"update cadastro.cargo set ativo = {ativo} where id = {id};";
 
-            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) != null;
+            return DBHelper<Cargo>.InstanciaNpgsql.Get(sql) >= 0;
         }
     }
 }

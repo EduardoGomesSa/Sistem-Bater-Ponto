@@ -13,21 +13,21 @@ namespace BaterPonto.Infra.Repositories
         {
             var query = $"update cadastro.funcionario set data_fim_contratacao = '{dataFim}' where id = {id};";
 
-            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) != null;
+            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) >= 0;
         }
 
         public bool AtualizarNome(long id, string nome)
         {
             var query = $"update cadastro.funcionario set nome = '{nome}' where id = {id};";
 
-            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) != null;
+            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) >= 0;
         }
 
         public bool FuncionarioExiste(string cpf)
         {
             var query = $"select * from cadastro.funcionario where cpf = '{cpf}';";
 
-            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) == null;
+            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) == 0;
         }
 
         public List<Funcionario> CargoTemFuncionario(long id)
@@ -38,7 +38,7 @@ namespace BaterPonto.Infra.Repositories
 
             if (funcionariosDoCargo.Count > 0) return funcionariosDoCargo;
 
-            return null;
+            return new List<Funcionario>();
         }
 
         public bool MudarCargoFuncionario(long idFuncionario, long idCargo)
@@ -47,7 +47,7 @@ namespace BaterPonto.Infra.Repositories
 
             var query = $"update cadastro.funcionario set id_cargo = {idCargo} where id = {idFuncionario};";
 
-            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) != null;
+            return DBHelper<Funcionario>.InstanciaNpgsql.Get(query) >= 0;
         }
     }
 }

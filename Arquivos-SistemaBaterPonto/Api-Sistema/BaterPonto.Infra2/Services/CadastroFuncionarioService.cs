@@ -1,9 +1,6 @@
 ﻿using BaterPonto.Application.Interfaces;
 using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
-using BaterPonto.Infra.Repositories.Data;
-using Microsoft.VisualBasic;
-using NHibernate.Mapping;
 
 namespace BaterPonto.Infra.Services
 {
@@ -20,7 +17,7 @@ namespace BaterPonto.Infra.Services
 
         public bool Adicionar(Funcionario funcionario)
         {
-            var cargo = _cargoRepository.BuscarPorNome(funcionario.Cargo.Nome);
+                var cargo = _cargoRepository.BuscarPorNome(funcionario.Cargo.Nome);
 
             if(cargo != null && cargo.Id > 0)
             {
@@ -87,7 +84,7 @@ namespace BaterPonto.Infra.Services
         {
             var listaFuncionario = _funcionarioRepository.CargoTemFuncionario(id);
 
-            List<Funcionario> funcionariosEmpregados = new List<Funcionario>();
+            List<Funcionario> funcionariosEmpregados = new();
 
             foreach (var funcionario in listaFuncionario)
             {

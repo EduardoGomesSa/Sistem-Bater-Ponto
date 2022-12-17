@@ -1,11 +1,9 @@
 ﻿
 using BaterPonto.Domain.Entities;
 using BaterPonto.Infra.Interfaces;
-using BaterPonto.Infra.Repositories;
 using BaterPonto.Infra.Services;
 using Moq;
 using Xunit;
-using static Slapper.AutoMapper;
 
 namespace BaterPonto.Testes.Services
 {
